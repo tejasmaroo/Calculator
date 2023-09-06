@@ -31,14 +31,16 @@ def calculator():
         num2 = float(input(("\nEnter the second number: ")))
         calculation_function = operations[operation]
         answer = calculation_function(num1, num2)
+        ranswer = round(answer, 2)
         print(f"{num1} {operation} {num2} = {answer}")
-
-        if input(f"\nType 'y' if you want to continue calculating with {answer}, type 'n' to start a new calculation: ") == 'y':
+        new = input(f"\nType 'y' if you want to continue calculating with {answer}, type 'n' to start a new calculation or type 'e' to exit: ")
+        if  new == 'y':
             num1 = answer
-        else: 
+        elif new == 'n': 
             continues = False
             calculator()
-
+        else:
+            break
 
 calculator()
         
